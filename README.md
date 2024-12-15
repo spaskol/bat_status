@@ -13,11 +13,14 @@ The Power State Logger was created to:
 ## How to Run It?
 
 1. **Create the Script**  
-   Save the following code in a file named `power_state_logger.sh`:
+  ```bash
+git clone
 
-Why it is created?
+## How to check it?
+   ```bash
+cat power_events.log
 
-How to run it?
+## What next?
 
-How to check it?
-
+1. **Add more logging events like battery percentage and remaining time**
+2. ** email notification **
