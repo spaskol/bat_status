@@ -5,16 +5,19 @@ Bash script for collecting power state data to check for power outages.
 
 The Power State Logger was created to:
 
-- **Track System Uptime**: Monitor how long the system has been running before a power failure or unexpected shutdown.
-- **Monitor Power State Changes**: Log changes in the system's power state (boot, shutdown, restart).
-- **Identify Power Outages**: Detect any unexpected power failures or outages by analyzing the logs.
-- **Analyze System Behavior**: Help diagnose issues related to system shutdowns or restarts by reviewing power state logs.
+- **Check when the server lost power**: The main purpose of the logger is to check for power outages on the electricity grid.
+- **Email notifications - to be developed**: Send email notifiactions to administrator when there is power loss.
 
 ## How to Run It?
 
 1. **Create the Script**  
   ```bash
 git clone
+. bat_state.sh
+```
+or run in background
+```bash
+. bat_state.sh &
 ```
 ## How to check it?
    ```bash
