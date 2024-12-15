@@ -15,12 +15,12 @@ The Power State Logger was created to:
 1. **Create the Script**  
   ```bash
 git clone
-
+```
 ## How to check it?
    ```bash
 cat power_events.log
-
+```
 ## What next?
 
-1. **Add more logging events like battery percentage and remaining time**
-2. ** email notification **
+- **Add more logging events like battery percentage and remaining time**
+- ** email notification **
