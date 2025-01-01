@@ -1,7 +1,5 @@
 #!/bin/bash
-# Show log on end
-#trap 'echo "stopped"'
-#SIGTSTP
+
 # Log file path
 LOG_FILE="$HOME/power_events.log"
 # Function to log messages
@@ -10,6 +8,7 @@ log_event() { echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" >> "$LOG_FILE";}
 PREVIOUS_STATE=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep "state:" | awk '{print $2}')
 # Log initial state
 log_event "Script started. Initial state: $PREVIOUS_STATE"
+
 # Monitor for changes
 while true; do
 # Get current state
@@ -20,10 +19,12 @@ then
 if { [ "$CURRENT_STATE" == "fully-charged" ] || [ "$CURRENT_STATE" == "charging" ]; } && [ "$PREVIOUS_STATE" == "discharging" ]
 then
 log_event "Switched to AC Power"
+. power_on_notification.sh
 PREVIOUS_STATE="$CURRENT_STATE"
 elif [ "$CURRENT_STATE" == "discharging" ] && { [ "$PREVIOUS_STATE" == "fully-charged" ] || [ "$PREVIOUS_STATE" == "charging" ]; }
 then
 log_event "Switched to Battery Power"
+. power_off_notification.sh
 PREVIOUS_STATE="$CURRENT_STATE"
 fi
 else
