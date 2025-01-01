@@ -14,8 +14,7 @@ The Power State Logger was created to:
 
 1. **Create the Script**  
   ```bash
-git clone
-. bat_state.sh
+git clone https://github.com/spaskol/bat_status.git
 ```
 or run in background
 ```bash
